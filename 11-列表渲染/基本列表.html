@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本列表</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <!--準備一個基本的容器-->
+    <div id="root">
+        <h2>人員列表(List)</h2>
+        <ul>
+            <li v-for="person in persons" :key="person.id">
+                <span>{{person.id}}</span>
+                <span>{{person.name}}</span>
+                <span>{{person.age}}</span>
+            </li>
+        </ul>
+        ---------------------------------------
+        <h2>人員列表(List)</h2>
+        <ul>
+            <li v-for="(person,index) in persons" ::key="index">
+                {{index}}-{{person.name}}
+            </li>
+        </ul>
+
+        ----------------------------------------
+        <h2>汽車訊息(Object)</h2>
+        <ul>
+            <li v-for="(value,key,index) in car" :key="index">
+                {{key}}-{{value}}
+            </li>
+
+
+    </div>
+    
+</body>
+<script type="text/javascript">
+    Vue.config.productionTip = false; 
+    // 1.創建Vue實例
+    new Vue({
+        el:'#root',
+        data:{
+            persons:[
+                {id:1,name:'小明',age:18},
+                {id:2,name:'小花',age:19},
+                {id:3,name:'小美',age:20},
+                {id:4,name:'小強',age:21},
+                {id:5,name:'小雞',age:22},
+            ],
+            car:{
+                brand:'BMW',
+                price:1000000,
+                color:'red'
+            }
+    
+        }
+    })
+</script>
+</html>

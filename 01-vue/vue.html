@@ -8,13 +8,15 @@
     <script src="../js/vue.js"></script>
 </head>
 <body>
-
+<!--準備一個基本的容器-->
     <div id="root">
 
     </div>
     
 </body>
 <script>
+       Vue.config.productionTip = false; 
+    // 1.創建Vue實例
     new Vue({
         el:'#root',
         data:{
