@@ -21,7 +21,7 @@
         ---------------------------------------
         <h2>人員列表(List)</h2>
         <ul>
-            <li v-for="(person,index) in persons" ::key="index">
+            <li v-for="(person,index) in persons" :key="index">
                 {{index}}-{{person.name}}
             </li>
         </ul>
@@ -32,31 +32,28 @@
             <li v-for="(value,key,index) in car" :key="index">
                 {{key}}-{{value}}
             </li>
-
-
+        </ul>
     </div>
-    
-</body>
-<script type="text/javascript">
-    Vue.config.productionTip = false; 
-    // 1.創建Vue實例
-    new Vue({
-        el:'#root',
-        data:{
-            persons:[
-                {id:1,name:'小明',age:18},
-                {id:2,name:'小花',age:19},
-                {id:3,name:'小美',age:20},
-                {id:4,name:'小強',age:21},
-                {id:5,name:'小雞',age:22},
-            ],
-            car:{
-                brand:'BMW',
-                price:1000000,
-                color:'red'
+    <script type="text/javascript">
+        Vue.config.productionTip = false;
+        // 1.創建Vue實例
+        new Vue({
+            el: '#root',
+            data: {
+                persons: [
+                    {id: 1, name: '小明', age: 18},
+                    {id: 2, name: '小花', age: 19},
+                    {id: 3, name: '小美', age: 20},
+                    {id: 4, name: '小強', age: 21},
+                    {id: 5, name: '小雞', age: 22},
+                ],
+                car: {
+                    brand: 'BMW',
+                    price: 1000000,
+                    color: 'red'
+                }
             }
-    
-        }
-    })
-</script>
+        })
+    </script>
+</body>
 </html>

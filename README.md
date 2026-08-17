@@ -24,12 +24,21 @@ Vue 2 基礎學習筆記與可直接在瀏覽器開啟的練習頁面。範例�
 
 本倉庫沒有 `package.json`、環境變數或安裝步驟，也沒有 dev server、build、test、lint 或 production deployment 設定。
 
+## Vendored dependency provenance
+
+`js/vue.js` 是 Vue.js 2.7.14 的 development build。檔頭記載 `Vue.js v2.7.14`、`(c) 2014-2022 Evan You` 與 MIT License，檔案內的 `Vue.version` 亦為 `2.7.14`。
+
+- 上游專案：[vuejs/vue](https://github.com/vuejs/vue)
+- 發行來源：[npm 套件 `vue@2.7.14`](https://www.npmjs.com/package/vue/v/2.7.14)，distribution path 為 `dist/vue.js`
+- 對應原始碼版本：[Vue.js v2.7.14](https://github.com/vuejs/vue/tree/v2.7.14)
+- 本地檔案：`js/vue.js`
+- 本地 SHA-256：`ad555b959d64794ebebabd8848cdfe7308d3dd74841aa752e05b522d9a099bf6`
+- 授權：[MIT License（v2.7.14）](https://github.com/vuejs/vue/blob/v2.7.14/LICENSE)
+
 ## 專案狀態與限制
 
 - 內容是獨立的 Vue 2 練習片段，不構成單一應用程式。
 - `01-vue/v.vue` 需要另行建立支援 Vue SFC 的專案才能編譯；本倉庫未提供該工具鏈。
-- `Vue-watch.html` 的 watcher key 目前寫成 `isHo`，因此切換 `isHot` 時不會觸發 watcher；保留為現有練習狀態。
-- `基本列表.html` 第二個 `v-for` 的 key 綁定寫成 `::key`，瀏覽器會忽略該錯誤屬性。
 
 ## 延伸資源
 
