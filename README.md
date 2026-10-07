@@ -2,6 +2,9 @@
 
 Vue 2 基礎學習筆記與可直接在瀏覽器開啟的練習頁面。範例透過本地 `js/vue.js` 載入 **Vue.js 2.7.14**，不是 Vue CLI、Vite 或 Vue 3 專案。
 
+> **正式環境警告：**`js/vue.js` 是供本學習範例使用的 Vue 開發版，不應部署或用於正式環境。
+> 正式網站應使用適當設定的 production build。
+
 ## 學習內容
 
 | 路徑 | 內容 |
@@ -22,7 +25,22 @@ Vue 2 基礎學習筆記與可直接在瀏覽器開啟的練習頁面。範例�
 2. 直接以瀏覽器開啟任一 `.html` 範例。
 3. watch 範例的輸出請在瀏覽器 DevTools Console 查看。
 
-本倉庫沒有 `package.json`、環境變數或安裝步驟，也沒有 dev server、build、test、lint 或 production deployment 設定。
+頁面本身不需安裝步驟或環境變數，也沒有 dev server、build、lint 或 production
+deployment 設定。根目錄的 `package.json` 僅用於可選的瀏覽器驗收。
+
+## 瀏覽器驗收
+
+```bash
+npm ci
+npx playwright install chromium
+npm test
+```
+
+也可用 `CHROME_BIN=/absolute/path/to/chrome npm test` 使用既有 Chrome／Chromium。
+2026-10-05 五個 tests 全部通過：Vue 掛載、雙向天氣切換、watch old/new 值、
+deep watch 變更與物件替換的 reference 語意，以及 ID／index key 在重排、插入、
+刪除時的 DOM identity。測試也要求沒有 Vue warnings 或瀏覽器錯誤；
+不把 `01-vue/v.vue` 草稿當作已編譯或已驗收的應用程式。
 
 ## Vendored dependency provenance
 
